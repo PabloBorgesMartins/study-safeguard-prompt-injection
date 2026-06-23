@@ -38,6 +38,8 @@ export type ModelConfig = {
 
 };
 
+console.assert(process.env.OPENROUTER_API_KEY, 'OPENROUTER_API_KEY is not set in the environment variables');
+
 export const config: ModelConfig = {
   apiKey: process.env.OPENROUTER_API_KEY!,
   httpReferer: '',
@@ -46,7 +48,9 @@ export const config: ModelConfig = {
     // 'qwen/qwen-2.5-7b-instruct',
     // 'qwen/qwen3-coder-next',
     // 'upstage/solar-pro-3:free',
-    'qwen/qwen-2.5-7b-instruct',// unsafe!
+    // 'qwen/qwen-2.5-7b-instruct',// unsafe!
+    // 'nex-agi/nex-n2-pro:free',
+    'cohere/north-mini-code:free'
   ],
 
   guardrailsModel: 'openai/gpt-oss-safeguard-20b',
