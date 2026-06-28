@@ -9,6 +9,7 @@ export const createChatNode = (openRouterService: OpenRouterService) => {
     try {
       const userPrompt = state.messages.at(-1)?.text!;
       const template = PromptTemplate.fromTemplate(prompts.system);
+
       const systemPrompt = await template.format({ USER_ROLE: state.user.role, USER_NAME: state.user.username });
 
       const response = await openRouterService.generate(systemPrompt, userPrompt);
